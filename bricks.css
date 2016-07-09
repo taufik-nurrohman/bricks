@@ -16,11 +16,11 @@
 
 /* animation */
 .bricks-ready {
-  -webkit-transition:width .7s ease;
-  -moz-transition:width .7s ease;
-  -ms-transition:width .7s ease;
-  -o-transition:width .7s ease;
-  transition:width .7s ease;
+  -webkit-transition:width .7s ease,height .7s ease;
+  -moz-transition:width .7s ease,height .7s ease;
+  -ms-transition:width .7s ease,height .7s ease;
+  -o-transition:width .7s ease,height .7s ease;
+  transition:width .7s ease,height .7s ease;
 }
 .brick-ready {
   -webkit-transition:top .7s ease,left .7s ease;
