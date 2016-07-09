@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bricks</title>
+    <link href="bricks.css" rel="stylesheet">
+    <style>
+* {
+  margin:0;
+  padding:0;
+}
+body {
+  background-color:white;
+  font:normal normal 13px/1 Helmet,FreeSans,Sans-Serif;
+  color:black;
+  padding:50px;
+}
+p {
+  margin:0 0 1em;
+  text-align:center;
+}
+label {cursor:pointer}
+label input {display:none}
+label input:checked + span {color:gray}
+/* debug */
+.debug .bricks {background-color:salmon}
+.debug .brick {
+  background-color:white;
+  color:salmon;
+}
+    </style>
+  </head>
+  <body>
+
+    <p>
+      <label><input type="checkbox" onchange="document.body.classList.toggle('debug');"><span>debug</span></label>
+    </p>
+
+    <div id="bricks" class="bricks">
+      <div class="brick" style="height:100px;">1</div>
+      <div class="brick" style="height:120px;">2</div>
+      <div class="brick" style="height:100px;">3</div>
+      <div class="brick" style="height:60px;">4</div>
+      <div class="brick" style="height:50px;">5</div>
+      <div class="brick" style="height:30px;">6</div>
+      <div class="brick" style="height:70px;">7</div>
+      <div class="brick" style="height:100px;">8</div>
+      <div class="brick" style="height:70px;">9</div>
+      <div class="brick" style="height:40px;">10</div>
+      <div class="brick" style="height:100px;">11</div>
+      <div class="brick" style="height:100px;">12</div>
+      <div class="brick" style="height:60px;">13</div>
+      <div class="brick" style="height:50px;">14</div>
+      <div class="brick" style="height:70px;">15</div>
+      <div class="brick" style="height:40px;">16</div>
+      <div class="brick" style="height:70px;">17</div>
+      <div class="brick" style="height:100px;">18</div>
+      <div class="brick" style="height:70px;">19</div>
+      <div class="brick" style="height:40px;">20</div>
+      <div class="brick" style="height:100px;">21</div>
+      <div class="brick" style="height:100px;">22</div>
+      <div class="brick" style="height:60px;">23</div>
+      <div class="brick" style="height:50px;">24</div>
+      <div class="brick" style="height:30px;">25</div>
+      <div class="brick" style="height:70px;">26</div>
+      <div class="brick" style="height:100px;">27</div>
+      <div class="brick" style="height:100px;">28</div>
+      <div class="brick" style="height:100px;">29</div>
+      <div class="brick" style="height:60px;">30</div>
+      <div class="brick" style="height:50px;">31</div>
+      <div class="brick" style="height:100px;">32</div>
+      <div class="brick" style="height:30px;">33</div>
+      <div class="brick" style="height:70px;">34</div>
+      <div class="brick" style="height:100px;">35</div>
+      <div class="brick" style="height:70px;">36</div>
+      <div class="brick" style="height:100px;">37</div>
+      <div class="brick" style="height:60px;">38</div>
+      <div class="brick" style="height:50px;">39</div>
+      <div class="brick" style="height:40px;">40</div>
+      <div class="brick" style="height:30px;">41</div>
+      <div class="brick" style="height:70px;">42</div>
+      <div class="brick" style="height:100px;">43</div>
+      <div class="brick" style="height:70px;">44</div>
+      <div class="brick" style="height:40px;">45</div>
+      <div class="brick" style="height:100px;">46</div>
+      <div class="brick" style="height:100px;">47</div>
+      <div class="brick" style="height:60px;">48</div>
+      <div class="brick" style="height:50px;">49</div>
+      <div class="brick" style="height:30px;">50</div>
+      <div class="brick" style="height:30px;">51</div>
+      <div class="brick" style="height:70px;">52</div>
+      <div class="brick" style="height:100px;">53</div>
+      <div class="brick" style="height:100px;">54</div>
+      <div class="brick" style="height:60px;">55</div>
+      <div class="brick" style="height:50px;">56</div>
+      <div class="brick" style="height:30px;">57</div>
+      <div class="brick" style="height:70px;">58</div>
+      <div class="brick" style="height:100px;">59</div>
+      <div class="brick" style="height:70px;">60</div>
+      <div class="brick" style="height:40px;">61</div>
+      <div class="brick" style="height:100px;">62</div>
+      <div class="brick" style="height:100px;">63</div>
+      <div class="brick" style="height:60px;">64</div>
+      <div class="brick" style="height:50px;">65</div>
+      <div class="brick" style="height:30px;">66</div>
+      <div class="brick" style="height:70px;">67</div>
+      <div class="brick" style="height:100px;">68</div>
+      <div class="brick" style="height:70px;">69</div>
+      <div class="brick" style="height:40px;">70</div>
+      <div class="brick" style="height:100px;">71</div>
+      <div class="brick" style="height:100px;">72</div>
+      <div class="brick" style="height:60px;">73</div>
+      <div class="brick" style="height:50px;">74</div>
+      <div class="brick" style="height:30px;">75</div>
+      <div class="brick" style="height:70px;">76</div>
+      <div class="brick" style="height:100px;">77</div>
+      <div class="brick" style="height:100px;">78</div>
+      <div class="brick" style="height:60px;">79</div>
+      <div class="brick" style="height:50px;">80</div>
+      <div class="brick" style="height:30px;">81</div>
+      <div class="brick" style="height:70px;">82</div>
+      <div class="brick" style="height:100px;">83</div>
+      <div class="brick" style="height:70px;">84</div>
+      <div class="brick" style="height:40px;">85</div>
+      <div class="brick" style="height:100px;">86</div>
+      <div class="brick" style="height:100px;">87</div>
+      <div class="brick" style="height:60px;">88</div>
+      <div class="brick" style="height:50px;">89</div>
+      <div class="brick" style="height:30px;">90</div>
+      <div class="brick" style="height:70px;">91</div>
+      <div class="brick" style="height:100px;">92</div>
+      <div class="brick" style="height:70px;">93</div>
+      <div class="brick" style="height:40px;">94</div>
+      <div class="brick" style="height:100px;">95</div>
+      <div class="brick" style="height:100px;">96</div>
+      <div class="brick" style="height:100px;">97</div>
+      <div class="brick" style="height:60px;">98</div>
+      <div class="brick" style="height:50px;">99</div>
+      <div class="brick" style="height:30px;">100</div>
+      <div class="brick" style="height:70px;">101</div>
+      <div class="brick" style="height:100px;">102</div>
+      <div class="brick" style="height:120px;">103</div>
+      <div class="brick" style="height:60px;">104</div>
+      <div class="brick" style="height:50px;">105</div>
+      <div class="brick" style="height:100px;">106</div>
+      <div class="brick" style="height:70px;">107</div>
+      <div class="brick" style="height:40px;">108</div>
+      <div class="brick" style="height:100px;">109</div>
+      <div class="brick" style="height:100px;">110</div>
+      <div class="brick" style="height:60px;">111</div>
+      <div class="brick" style="height:100px;">112</div>
+      <div class="brick" style="height:60px;">113</div>
+      <div class="brick" style="height:50px;">114</div>
+      <div class="brick" style="height:30px;">115</div>
+      <div class="brick" style="height:70px;">116</div>
+      <div class="brick" style="height:100px;">117</div>
+      <div class="brick" style="height:70px;">118</div>
+      <div class="brick" style="height:100px;">119</div>
+      <div class="brick" style="height:60px;">120</div>
+      <div class="brick" style="height:50px;">121</div>
+      <div class="brick" style="height:30px;">122</div>
+      <div class="brick" style="height:70px;">123</div>
+      <div class="brick" style="height:30px;">124</div>
+      <div class="brick" style="height:70px;">125</div>
+      <div class="brick" style="height:100px;">126</div>
+      <div class="brick" style="height:70px;">127</div>
+      <div class="brick" style="height:40px;">128</div>
+      <div class="brick" style="height:30px;">129</div>
+      <div class="brick" style="height:70px;">130</div>
+      <div class="brick" style="height:100px;">131</div>
+      <div class="brick" style="height:70px;">132</div>
+      <div class="brick" style="height:100px;">133</div>
+      <div class="brick" style="height:60px;">134</div>
+      <div class="brick" style="height:50px;">135</div>
+      <div class="brick" style="height:70px;">136</div>
+      <div class="brick" style="height:100px;">137</div>
+      <div class="brick" style="height:40px;">138</div>
+      <div class="brick" style="height:100px;">139</div>
+      <div class="brick" style="height:100px;">140</div>
+      <div class="brick" style="height:60px;">141</div>
+      <div class="brick" style="height:50px;">142</div>
+      <div class="brick" style="height:30px;">143</div>
+      <div class="brick" style="height:70px;">144</div>
+      <div class="brick" style="height:100px;">145</div>
+      <div class="brick" style="height:70px;">146</div>
+      <div class="brick" style="height:40px;">147</div>
+      <div class="brick" style="height:100px;">148</div>
+      <div class="brick" style="height:100px;">149</div>
+      <div class="brick" style="height:60px;">150</div>
+      <div class="brick" style="height:50px;">151</div>
+      <div class="brick" style="height:30px;">152</div>
+      <div class="brick" style="height:70px;">153</div>
+      <div class="brick" style="height:100px;">154</div>
+      <div class="brick" style="height:60px;">155</div>
+      <div class="brick" style="height:50px;">156</div>
+      <div class="brick" style="height:30px;">157</div>
+      <div class="brick" style="height:70px;">158</div>
+      <div class="brick" style="height:100px;">159</div>
+      <div class="brick" style="height:70px;">160</div>
+      <div class="brick" style="height:40px;">161</div>
+      <div class="brick" style="height:100px;">162</div>
+      <div class="brick" style="height:100px;">163</div>
+      <div class="brick" style="height:60px;">164</div>
+      <div class="brick" style="height:50px;">165</div>
+      <div class="brick" style="height:30px;">166</div>
+      <div class="brick" style="height:70px;">167</div>
+      <div class="brick" style="height:100px;">168</div>
+      <div class="brick" style="height:70px;">169</div>
+      <div class="brick" style="height:40px;">170</div>
+      <div class="brick" style="height:100px;">171</div>
+    </div>
+
+    <script src="bricks.js"></script>
+    <script>
+bricks('bricks', 4, 4);
+    </script>
+
+  </body>
+</html>
