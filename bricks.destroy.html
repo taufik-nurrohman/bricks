@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Bricks &middot; Destroy</title>
-    <link href="bricks.css" rel="stylesheet">
+    <link href="bricks.min.css" rel="stylesheet">
     <style>
 * {
   margin:0;
@@ -59,7 +59,7 @@ label input:checked + span {color:gray}
       <div class="brick" style="height:40px;">20</div>
     </div>
 
-    <script src="bricks.js"></script>
+    <script src="bricks.min.js"></script>
     <script>
 // destroy function for `bricks`
 function bricks_destroy(wall) {
@@ -67,15 +67,12 @@ function bricks_destroy(wall) {
         wall = document.getElementById(wall);
     }
     if (!wall.classList.contains('bricks-ready')) return;
-    wall.parentNode.removeChild(wall.previousSibling);
     wall.classList.remove('bricks-ready');
-    wall.removeAttribute('style');
     wall.setAttribute('style', wall.getAttribute('data-style'));
     var bricks = wall.children;
     for (var i = 0, len = bricks.length; i < len; ++i) {
         var brick = bricks[i];
         brick.classList.remove('brick-ready');
-        brick.removeAttribute('style');
         brick.setAttribute('style', brick.getAttribute('data-style'));
     }
 }
