@@ -69,11 +69,13 @@ function bricks_destroy(wall) {
     if (!wall.classList.contains('bricks-ready')) return;
     wall.classList.remove('bricks-ready');
     wall.setAttribute('style', wall.getAttribute('data-style'));
+    wall.removeAttribute('data-style');
     var bricks = wall.children;
     for (var i = 0, len = bricks.length; i < len; ++i) {
         var brick = bricks[i];
         brick.classList.remove('brick-ready');
         brick.setAttribute('style', brick.getAttribute('data-style'));
+        brick.removeAttribute('data-style');
     }
 }
     </script>

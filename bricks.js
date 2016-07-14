@@ -1,30 +1,19 @@
 /*! Bricks by Taufik Nurrohman <https://github.com/tovic> based on <https://gist.github.com/2208329> */
 (function(w, d) {
 
-    // find minimum value from array
-    Array.prototype.min = function() {
-        return Math.min.apply({}, this);
-    };
-
-    // find maximum value from array
-    Array.prototype.max = function() {
-        return Math.max.apply({}, this);
-    };
-
     // wall, brick(s) margin, wall padding
     w.bricks = function(wall, gap, pad) {
-        gap = gap || 0;
-        pad = pad || 0;
+        gap = gap || 0, pad = pad || 0;
         if (typeof wall === "string") {
             wall = d.getElementById(wall);
         }
-        function class_a(el, c) {
+        function edge(a, b) {
+            return Math[b].apply({}, a);
+        }
+        function class_A(el, c) {
             return el.classList.add(c);
         }
-        function class_r(el, c) {
-            return el.classList.remove(c);
-        }
-        function class_h(el, c) {
+        function class_C(el, c) {
             return el.classList.contains(c);
         }
         var bricks = wall.children,
@@ -35,11 +24,7 @@
         var width = bricks[0].offsetWidth + gap,
             o = wall.getAttribute('style') || "",
             x = d.createElement('div');
-        class_a(wall, 'bricks');
-        class_a(x, wall.className);
-        wall.style.padding = 0;
-        wall.style.position = 'relative';
-        wall.setAttribute('data-style', o);
+        x.className = wall.className || "";
         x.style.margin = 0;
         x.style.padding = 0;
         x.style.border = 0;
@@ -50,8 +35,12 @@
         x.style.display = 'block';
         x.style.clear = 'both';
         x.style.visibility = 'hidden';
+        class_A(wall, 'bricks');
+        wall.style.padding = 0;
+        wall.style.position = 'relative';
+        wall.setAttribute('data-style', o);
         function apply(first) {
-            if (!first && !class_h(wall, 'bricks-ready')) return;
+            if (!first && !class_C(wall, 'bricks-ready')) return;
             wall.parentNode.insertBefore(x, wall.nextElementSibling || wall.nextSibling || null);
             c_h = [];
             c_c = Math.floor(x.offsetWidth / width);
@@ -70,18 +59,18 @@
                     brick.style.margin = 0;
                 }
                 for (j = c_c - 1; j > -1; --j) {
-                    if (c_h[j] === c_h.min()) {
+                    if (c_h[j] === edge(c_h, 'min')) {
                         c_t = j;
                     }
                 }
                 brick.style.top = (c_h[c_t] + pad) + 'px';
                 brick.style.left = ((width * c_t) + pad) + 'px';
                 c_h[c_t] += brick.offsetHeight + gap;
-                class_a(brick, 'brick-ready');
+                if (first) class_A(brick, 'brick-ready');
             }
             wall.style.width = ((width * c_h.length) - gap + (pad * 2)) + 'px';
-            wall.style.height = (c_h.max() - gap + (pad * 2)) + 'px';
-            class_a(wall, 'bricks-ready');
+            wall.style.height = (edge(c_h, 'max') - gap + (pad * 2)) + 'px';
+            if (first) class_A(wall, 'bricks-ready');
         } apply(1);
         w.addEventListener("resize", function() {
             if (wait) w.clearTimeout(wait);
